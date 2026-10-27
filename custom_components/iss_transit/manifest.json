@@ -1,0 +1,12 @@
+{
+  "domain": "iss_transit",
+  "name": "ISS Transit",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/quitkelvin/ha-iss-transit",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/quitkelvin/ha-iss-transit/issues",
+  "requirements": ["skyfield>=1.48"],
+  "version": "0.1.0"
+}

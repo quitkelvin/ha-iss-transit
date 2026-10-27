@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ISS Transit",
+        "description": "Paste your location: in Google Maps right-click (long-press on mobile) the spot and click the numbers at the top to copy them, e.g. 48.85837, 2.29448. Radius = how far you would travel for a transit.",
+        "data": {
+          "location": "Location (latitude, longitude)",
+          "radius_km": "Radius (km)",
+          "days": "Look-ahead (days, max 14)",
+          "min_altitude": "Minimum Sun/Moon altitude (°)"
+        }
+      }
+    },
+    "error": {
+      "invalid_location": "Please paste as 'latitude, longitude', e.g. 48.85837, 2.29448"
+    },
+    "abort": {
+      "already_configured": "This location is already configured"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ISS Transit",
+        "data": {
+          "location": "Location (latitude, longitude)",
+          "radius_km": "Radius (km)",
+          "days": "Look-ahead (days, max 14)",
+          "min_altitude": "Minimum Sun/Moon altitude (°)"
+        }
+      }
+    },
+    "error": {
+      "invalid_location": "Please paste as 'latitude, longitude', e.g. 48.85837, 2.29448"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_transit": {
+        "name": "Next transit"
+      },
+      "transit_count": {
+        "name": "Transits within radius"
+      }
+    }
+  }
+}

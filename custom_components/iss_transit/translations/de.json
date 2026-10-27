@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ISS Transit",
+        "description": "Standort einfügen: in Google Maps mit rechter Maustaste (am Handy lange tippen) auf den Ort, die Zahlen oben antippen = kopiert, z. B. 48.85837, 2.29448. Radius = wie weit du für einen Transit fahren würdest.",
+        "data": {
+          "location": "Standort (Breite, Länge)",
+          "radius_km": "Radius (km)",
+          "days": "Vorschau (Tage, max. 14)",
+          "min_altitude": "Mindesthöhe von Sonne/Mond (°)"
+        }
+      }
+    },
+    "error": {
+      "invalid_location": "Bitte als 'Breite, Länge' einfügen, z. B. 48.85837, 2.29448"
+    },
+    "abort": {
+      "already_configured": "Dieser Standort ist schon eingerichtet"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ISS Transit",
+        "data": {
+          "location": "Standort (Breite, Länge)",
+          "radius_km": "Radius (km)",
+          "days": "Vorschau (Tage, max. 14)",
+          "min_altitude": "Mindesthöhe von Sonne/Mond (°)"
+        }
+      }
+    },
+    "error": {
+      "invalid_location": "Bitte als 'Breite, Länge' einfügen, z. B. 48.85837, 2.29448"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_transit": {
+        "name": "Nächster Transit"
+      },
+      "transit_count": {
+        "name": "Transits im Radius"
+      }
+    }
+  }
+}
