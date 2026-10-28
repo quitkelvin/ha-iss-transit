@@ -68,6 +68,13 @@ Nutzungsregeln gelten, Abruf hier alle 6 h), Ephemeride DE421 von NASA/JPL – b
 von der MIT-Lizenz erfasst. Unentgeltlich, ohne Gewährleistung, Haftung ausgeschlossen, soweit gesetzlich zulässig;
 zwingende Haftung (Vorsatz, grobe Fahrlässigkeit, Leben/Körper/Gesundheit) bleibt unberührt.
 
+## Dashboard (Bubble style)
+
+A ready-made dark dashboard view in Bubble Card style (rounded cards, pop-up with details) is in [`dashboard/bubble.yaml`](dashboard/bubble.yaml). It needs [Bubble Card](https://github.com/Clooos/Bubble-Card) (HACS, v3.2 or newer). Add it via *Edit dashboard → ⋮ → Raw configuration editor* under `views:`; entity IDs are the English defaults – adjust them if yours differ.
+Screenshot shows invented example values.
+
+<img src="docs/images/bubble_start.png" width="300" alt="Bubble dashboard"> <img src="docs/images/bubble_popup.png" width="300" alt="Bubble dashboard">
+
 ## Example card (Markdown)
 
 ```yaml
