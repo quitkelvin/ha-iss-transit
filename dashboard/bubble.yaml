@@ -1,0 +1,60 @@
+# Bubble-style dashboard view (dark, rounded cards) – requires Bubble Card from HACS (Clooos/Bubble-Card, v3.2 or newer).
+# Add it as a view: Edit dashboard → ⋮ → Raw configuration editor → paste under `views:` (or copy the two cards into an existing view).
+# Tap the main card to open the pop-up (hash #iss). Entity IDs are the defaults for an English installation –
+# adjust them if your device or entities are named differently.
+title: ISS transit
+path: iss
+cards:
+- type: vertical-stack
+  cards:
+  - type: custom:bubble-card
+    card_type: separator
+    name: Sky
+    icon: mdi:space-station
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    entity: sensor.iss_transit_next_transit
+    name: Next ISS transit
+    show_state: true
+    icon: mdi:space-station
+    sub_button:
+    - entity: sensor.iss_transit_transits_within_radius
+      show_state: true
+      show_icon: true
+      name: In radius
+      show_name: false
+    tap_action:
+      action: navigate
+      navigation_path: '#iss'
+- type: custom:bubble-card
+  card_type: pop-up
+  hash: '#iss'
+  popup_style: home-assistant
+  name: ISS transit
+  icon: mdi:space-station
+  cards:
+  - type: custom:bubble-card
+    card_type: separator
+    name: Next transit
+    icon: mdi:moon-waxing-gibbous
+  - type: markdown
+    content: '{% set s = ''sensor.iss_transit_next_transit'' %}{% set a = states[s].attributes if states[s] else {} %}
+
+      {% if a.body is defined %}**{{ ''Moon'' if a.body == ''moon'' else ''Sun'' }}** · {{ as_timestamp(states(s)) | timestamp_custom(''%a %d.%m.
+      %H:%M:%S'') }}
+
+
+      Centre line **{{ a.distance_km }} km** away (bearing {{ a.bearing_deg }}°), width ±{{ a.half_width_km }} km, duration {{ a.duration_s }}
+      s, altitude {{ a.body_altitude_deg }}°
+
+
+      {{ ''✅ visible from home'' if a.visible_from_home else ''🚗 drive to the centre line'' }} · [Open map]({{ a.maps }}){% else %}No transit
+      within the radius in the forecast window.{% endif %}'
+  - type: custom:bubble-card
+    card_type: button
+    button_type: state
+    entity: sensor.iss_transit_transits_within_radius
+    name: Transits within radius
+    show_state: true
+    icon: mdi:counter
